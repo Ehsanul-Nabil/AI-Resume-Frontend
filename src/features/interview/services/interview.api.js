@@ -1,9 +1,22 @@
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: "http://localhost:3000",
-    withCredentials: true,
-})
+// const api = axios.create({
+//     baseURL: "http://localhost:3000",
+//     withCredentials: true,
+// })
+
+
+const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+// Set the base URL dynamically
+const BASE = isLocal 
+    ? "http://localhost:3000" 
+    : "https://nexthire-backend-gmyc.onrender.com"; // Replace with your actual live backend URL
+
+const api = axios.create({ 
+    baseURL: BASE, 
+    withCredentials: true 
+});
 
 
 /**
