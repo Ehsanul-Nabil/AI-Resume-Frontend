@@ -1,33 +1,4 @@
-// import { createBrowserRouter } from "react-router";
-// import Register from "./features/auth/pages/Register";
-// import Protected from "./features/auth/components/Protected";
-// import Home from "./features/interview/pages/Home";
-// import Interview from "./features/interview/pages/Interview";
-// import AuthSuccess from "./features/auth/pages/AuthSuccess";
 
-
-// export const router = createBrowserRouter([
-//     {
-//         path: "/login",
-//         element: <Login />
-//     },
-//     {
-//         path: "/auth-success",
-//         element: <AuthSuccess />
-//     },
-//     {
-//         path: "/register",
-//         element: <Register />
-//     },
-//     {
-//         path: "/",
-//         element: <Protected><Home /></Protected>
-//     },
-//     {
-//         path:"/interview/:interviewId",
-//         element: <Protected><Interview /></Protected>
-//     }
-// ])
 
 import { Route, Routes } from "react-router-dom";
 import Register from "./features/auth/pages/Register";
