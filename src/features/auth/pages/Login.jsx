@@ -68,7 +68,7 @@ const Login = () => {
                 </div>
 
 <button 
-    onClick={() => window.open("http://localhost:3000/api/auth/google", "_self")} 
+onClick={() => window.open(`${import.meta.env.VITE_API_URL}/api/auth/google`, "_self")}
     className="google-auth-btn"
 >
     <svg className="google-icon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
