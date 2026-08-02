@@ -2,8 +2,9 @@
 
 
 import React from 'react';
-import UserProfileHeader from './profilecontent/UserProfileHeader';
-import PersonalInfoCard from './profilecontent/PersonalInfoCard';
+import PersonalInfoCard from './ProfilePart/PersonalInfoCard';
+import UserProfileHeader from './ProfilePart/UserProfileHeader';
+
 
 const ProfileContent = ({ user, onSave }) => {
     return (
