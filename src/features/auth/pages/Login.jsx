@@ -68,7 +68,15 @@ const Login = () => {
                 </div>
 
 <button 
-onClick={() => window.open(`${import.meta.env.VITE_API_URL}/api/auth/google`, "_self")}
+// onClick={() => window.open(`${import.meta.env.VITE_API_URLL}/api/auth/google`, "_self")}
+onClick={
+    () => {
+  const apiUrl = import.meta.env.NODE_ENV === "production" 
+    ? import.meta.env.VITE_API_URL
+    : import.meta.env.VITE_API_URLL;
+  window.open(`${apiUrl}/api/auth/google`, "_self");
+}
+}
     className="google-auth-btn"
 >
     <svg className="google-icon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
