@@ -71,7 +71,7 @@ const Login = () => {
 // onClick={() => window.open(`${import.meta.env.VITE_API_URLL}/api/auth/google`, "_self")}
 onClick={
     () => {
-  const apiUrl = import.meta.env.NODE_ENV === "production" 
+  const apiUrl = import.meta.env.VITE_NODE_ENV=== "production" 
     ? import.meta.env.VITE_API_URL
     : import.meta.env.VITE_API_URLL;
   window.open(`${apiUrl}/api/auth/google`, "_self");
