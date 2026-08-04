@@ -5,14 +5,12 @@ import { InterviewProvider } from "./features/interview/interview.context.jsx";
 
 function App() {
   return (
-
     <AuthProvider>
       <Navbar/>
       <InterviewProvider>
         <AppRoutes />
       </InterviewProvider>
     </AuthProvider>
-
   );
 }
 
