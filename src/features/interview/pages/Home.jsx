@@ -164,6 +164,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const handleGenerateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
+        console.log("intdidifjkjdkfkk")
         const data = await generateReport({ jobDescription, selfDescription, resumeFile });
         navigate(`/interview/${data._id}`);
     };

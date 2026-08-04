@@ -15,7 +15,35 @@ export const useInterview = () => {
 
     const { loading, setLoading, report, setReport, reports, setReports } = context
 
+    // const generateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
+    //     setLoading(true)
+    //     let response = null
+    //     try {
+    //         response = await generateInterviewReport({ jobDescription, selfDescription, resumeFile })
+    //         setReport(response.interviewReport)
+    //     } catch (error) {
+    //         console.log(error)
+    //     } finally {
+    //         setLoading(false)
+    //     }
+
+    //     return response.interviewReport
+    // }
+
+
     const generateReport = async ({ jobDescription, selfDescription, resumeFile }) => {
+        // Validation: Job description is strictly required
+        if (!jobDescription || !jobDescription.trim()) {
+            alert("Please provide the Target Job Description.");
+            return null;
+        }
+        // Validation: Either a resume file or a self description must be provided
+        const hasResume = resumeFile && (resumeFile instanceof File || resumeFile.size > 0);
+        const hasSelfDescription = selfDescription && selfDescription.trim().length > 0;
+        if (!hasResume && !hasSelfDescription) {
+            alert("Please either upload a Resume or provide a Quick Self-Description.");
+            return null;
+        }
         setLoading(true)
         let response = null
         try {
@@ -26,8 +54,7 @@ export const useInterview = () => {
         } finally {
             setLoading(false)
         }
-
-        return response.interviewReport
+        return response?.interviewReport || null
     }
 
     const getReportById = async (interviewId) => {
