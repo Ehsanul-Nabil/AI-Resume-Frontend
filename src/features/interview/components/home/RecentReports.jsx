@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function RecentReports({ reports, onSelectReport }) {
     if (!reports || reports.length === 0) return null;
